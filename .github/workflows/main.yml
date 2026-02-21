@@ -1,2 +1,18 @@
-name: A workflow for my Hello World file
-on: push
+name: Executar minha Action de Teste
+
+on:
+  push:
+    branches: [ "main", "teste" ]  # Aqui ele vai rodar na sua branch de teste!
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    name: Um job que saúda o mundo
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Rodar minha Custom Action
+        uses: ./.            # Isso diz ao GitHub: "use a Action que está na raiz deste repo"
+        with:
+          MY_NAME: "Cesar"   # O input que você definiu na sua Action
