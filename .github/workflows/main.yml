@@ -13,6 +13,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Rodar minha Custom Action
-        uses: ./.            # Isso diz ao GitHub: "use a Action que está na raiz deste repo"
+        uses: ./action-a            # Isso diz ao GitHub: "use a Action que está na raiz deste repo"
         with:
           MY_NAME: "Cesar"   # O input que você definiu na sua Action
